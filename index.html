@@ -10,119 +10,121 @@
 <body>
     <!-- ヘッダー -->
     <header class="top">
-
-        <div class="header-nav">
-            <div class="header-nav-inner">
-                <!-- ヘッダーロゴ -->
-                <p class="header-nav-logo"><a href="#"><img src="img/logo.png" alt="生理用品配布ＭＡＰ"></a></p>
-
-                <!-- メニュー -->
-                <nav class="header-nav-menu">
-                    <ul class="menu">
-                        <li class="menu-item"><a href="#">メニュー入れる</a></li>
-                        <li class="menu-item"><a href="#">メニュー入れる</a></li>
-                        <li class="menu-item"><a href="#">メニュー入れる</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
          <!-- メイン画像 -->
         <div class="main-imglogo"><img src="img/logo.png" alt="生理用品配布ＭＡＰ"></div>
+        <!-- 検索フォーム -->
+        <h1>検索したい地域名を入力してください</h1>
+        <input id="search" class="search-form" type="text" placeholder="例：東京都">
+        <div class="search-submit">
+            <button class="c-button" popovertarget="result" popovertargetaction="show">検索</button>
+        </div>
+        <div id="result" popover="auto">
+            <div class="inner-result">
+                <p class="text">検索結果</p>
+                <button class="Close" popovertarget="result" popovertargetaction="hidden">閉じる</button> 
+        </div>
+
     </header>
     <!-- ヘッダー -->
 
     <main>
 
-        <!-- 地域で探す -->
+        <!-- 地域から探す -->
         <section id="tiiki" class="section-tiiki">
+            <div class="tiiki-header">
+                <h2 class="tiiki-title">地域から探す</h2>
+            </div>
             <details>
-                <summary>北海道・東北</summary>
-                    <li>情報1</li>
-                    <li>情報2</li>
-                    <li>情報3</li>
+                <summary class="tiiki-name">北海道・東北</summary>
+                    <li>北海道</li>
+                    <li>青森県</li>
+                    <li>岩手県</li>
+                    <li>宮城県</li>
+                    <li>秋田県</li>
+                    <li>山形県</li>
+                    <li>福島県</li>
             </details>
 
             <details>
-                <summary>関東</summary>
-                    <li>情報1</li>
-                    <li>情報2</li>
-                    <li>情報3</li>
+                <summary class="tiiki-name">関東</summary>
+                    <li>茨城県</li>
+                    <li>栃木県</li>
+                    <li>群馬県</li>
+                    <li>埼玉県</li>
+                    <li>千葉県</li>
+                    <li><a href="./tokyo.html">東京都</a></li>
+                    <li>神奈川県</li>
             </details>
 
             <details>
-                <summary>北陸</summary>
-                    <li>情報1</li>
-                    <li>情報2</li>
-                    <li>情報3</li>
+                <summary class="tiiki-name">北陸</summary>
+                    <li>新潟県</li>
+                    <li>富山県</li>
+                    <li>石川県</li>
+                    <li>福井県</li>
             </details>
 
             <details>
-                <summary>中部</summary>
-                    <li>情報1</li>
-                    <li>情報2</li>
-                    <li>情報3</li>
+                <summary class="tiiki-name">中部</summary>
+                    <li>山梨県</li>
+                    <li>長野県</li>
+                    <li>岐阜県</li>
+                    <li>静岡県</li>
+                    <li>愛知県</li>
             </details>
 
             <details>
-                <summary>関西</summary>
-                    <li>情報1</li>
-                    <li>情報2</li>
-                    <li>情報3</li>
+                <summary class="tiiki-name">関西</summary>
+                    <li>三重県</li>
+                    <li>滋賀県</li>
+                    <li>京都府</li>
+                    <li>大阪府</li>
+                    <li>兵庫県</li>
+                    <li>奈良県</li>
+                    <li>和歌山県</li>
             </details>
 
             <details>
-                <summary>中国</summary>
-                    <li>情報1</li>
-                    <li>情報2</li>
-                    <li>情報3</li>
+                <summary class="tiiki-name">中国</summary>
+                    <li>鳥取県</li>
+                    <li>島根県</li>
+                    <li>岡山県</li>
+                    <li>広島県</li>
+                    <li>山口県</li>
             </details>
 
             <details>
-                <summary>四国</summary>
-                    <li>情報1</li>
-                    <li>情報2</li>
-                    <li>情報3</li>
+                <summary class="tiiki-name">四国</summary>
+                    <li>徳島県</li>
+                    <li>香川県</li>
+                    <li>愛媛県</li>
+                    <li>高知県</li>
             </details>
 
             <details>
-                <summary>九州・沖縄</summary>
-                    <li>情報1</li>
-                    <li>情報2</li>
-                    <li>情報3</li>
+                <summary class="tiiki-name">九州・沖縄</summary>
+                    <li>福岡県</li>
+                    <li>佐賀県</li>
+                    <li>長崎県</li>
+                    <li>熊本県</li>
+                    <li>大分県</li>
+                    <li>宮崎県</li>
+                    <li>鹿児島県</li>
+                    <li>沖縄県</li>
             </details>
             
         </section>
-        <!-- 地域で探す -->
+        <!-- 地域から探す -->
         
-        <!-- 地図で探す -->
+        <!-- 地図から探す -->
         <section id="map" class="section-map">
-            マップ入れる
-        </section>
-        <!-- 地図で探す -->
-
-        <!-- 配布場所一覧から探す -->
-        <section id="list" class="section-list">
-            <a href="#" class="button-list">配布場所一覧を見る</a>
-        </section>
-        <!-- 全国一覧 -->
-
-        <!-- お問い合わせ -->
-        <section id="contact" class="section-contact">
-            <div class="section-contact-body">
-                <form action="#" class="c-form">
-                    <ul class="c-form-list">
-                        <li class="c-form-item">
-                            <label for="name" class="c-form-label">名前</label>
-                            <input type="text" name="name" id="name" class="c-form-input">
-                        </li>
-                    </ul>
-                    <div class="c-form-submit">
-                        <button class="c-button">送信</button>
-                    </div>
-                </form>
+            <div class="map-header">
+                <h3 class="map-title">地図から探す</h3>
             </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12973.385824657085!2d139.7057777!3d35.6191846!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188a7c6aa11bd3%3A0xcaf204fc9cd51b61!2z5ZOB5bed5Yy6IOeUt-Wls-WFseWQjOWPgueUu-OCu-ODs-OCv-ODvA!5e0!3m2!1sja!2sjp!4v1723451209600!5m2!1sja!2sjp" width="1200" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
-        <!-- お問い合わせ -->
+        <!-- 地図から探す -->
+
     </main>
 
     <!-- フッター -->

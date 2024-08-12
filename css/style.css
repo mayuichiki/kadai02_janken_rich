@@ -1,9 +1,139 @@
-img {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font-size: 100%;
-    vertical-align: bottom;
-    background: transparent
+img {     
+    max-width: 100%; height: auto; 
+}
+body {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    background-image: url(../img/bgimg.png);
+}
+h1,
+h2,
+h3 {
+    color: rgb(129, 196, 235);
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ヘッダー */
+.top {
+    width: 100%;
+    text-align: center;
+}
+
+#search{
+    width: 200px;
+    height: 30px;
+    font-size: 24px;
+    margin-top: 0;
+}
+
+.c-button {
+    display: inline-block;
+	padding: 0.4em 2em;
+	margin: 0 0 1em;
+	background-color:rgb(129, 196, 235);
+	color: #fff;
+    font-size: 24px;
+    border: none;
+	cursor: pointer;
+	transition: all 0.3s ease 0s;
+    border-radius: 1em;
+    margin-top: 30px;
+    margin-bottom: 140px;
+}
+.c-button:hover {
+	opacity: 0.6;
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 8px 16px;
+}
+  
+.Close{
+    background-color: rgb(231, 182, 108);
+}
+  
+button:hover, button:active {
+    opacity: 0.6;
+}
+  
+#result {
+    border: none;
+    border-radius: 9px;
+    box-shadow: 0 10px 20px -5px #000;
+    box-sizing: 1000;
+}
+  
+.inner-result {
+    align-content: center;
+    display: grid;
+    justify-items: center;
+    padding: 32px;
+}
+  
+.text {
+    font-weight: 600;
+    margin: 0 0 16px;
+}
+
+
+/* ヘッダー */
+
+/* 地域から探す */
+.tiiki-name {
+    color: rgb(129, 196, 235);
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+li {
+    color: rgb(231, 182, 108);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+/* 地域から探す */
+
+/* 地図から探す */
+#map {
+    text-align: center;
+}
+/* 地図から探す */
+
+/* フッター */
+footer{
+    width: 100%;
+    padding: 10px 10px;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer-copyrights{
+    color: rgb(129, 196, 235);
+    font-size: 18px;
+    margin: auto;
+}
+/* フッター */
+
+table,
+th,
+td {
+    border: 1px solid;
+}
+
+table {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow-x: auto;
+}
+
+.td-tiiki-name {
+    text-align: center;
 }
