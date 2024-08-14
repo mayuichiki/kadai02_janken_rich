@@ -16,12 +16,13 @@
         <h1>検索したい地域名を入力してください</h1>
         <input id="search" class="search-form" type="text" placeholder="例：東京都">
         <div class="search-submit">
-            <button class="c-button" popovertarget="result" popovertargetaction="show">検索</button>
+            <button id="submit" class="c-button" popovertarget="result" popovertargetaction="show">検索</button>
         </div>
         <div id="result" popover="auto">
             <div class="inner-result">
                 <p class="text">検索結果</p>
-                <button class="Close" popovertarget="result" popovertargetaction="hidden">閉じる</button> 
+                <p class="area-result"><a href=""></a></p>
+                <button class="close" popovertarget="result" popovertargetaction="hidden">閉じる</button> 
         </div>
 
     </header>
@@ -30,15 +31,15 @@
     <main>
 
         <!-- 地域から探す -->
-        <section id="tiiki" class="section-tiiki">
-            <div class="tiiki-header">
-                <h2 class="tiiki-title">地域から探す</h2>
+        <section id="area" class="section-area">
+            <div class="area-header">
+                <h2 class="area-title">地域から探す</h2>
             </div>
             <details>
-                <summary class="tiiki-name">北海道・東北</summary>
-                    <li>北海道</li>
-                    <li>青森県</li>
-                    <li>岩手県</li>
+                <summary class="area-name">北海道・東北</summary>
+                    <li class="area-name-2"><a href="hokkaido.html">北海道</a></li>
+                    <li class="area-name-2">青森県</li>
+                    <li class="area-name-2">岩手県</li>
                     <li>宮城県</li>
                     <li>秋田県</li>
                     <li>山形県</li>
@@ -46,18 +47,18 @@
             </details>
 
             <details>
-                <summary class="tiiki-name">関東</summary>
+                <summary class="area-name">関東</summary>
                     <li>茨城県</li>
                     <li>栃木県</li>
                     <li>群馬県</li>
                     <li>埼玉県</li>
                     <li>千葉県</li>
-                    <li><a href="./tokyo.html">東京都</a></li>
+                    <li class="area-name-2"><a href="tokyo.html">東京都</a></li>
                     <li>神奈川県</li>
             </details>
 
             <details>
-                <summary class="tiiki-name">北陸</summary>
+                <summary class="area-name">北陸</summary>
                     <li>新潟県</li>
                     <li>富山県</li>
                     <li>石川県</li>
@@ -65,7 +66,7 @@
             </details>
 
             <details>
-                <summary class="tiiki-name">中部</summary>
+                <summary class="area-name">中部</summary>
                     <li>山梨県</li>
                     <li>長野県</li>
                     <li>岐阜県</li>
@@ -74,7 +75,7 @@
             </details>
 
             <details>
-                <summary class="tiiki-name">関西</summary>
+                <summary class="area-name">関西</summary>
                     <li>三重県</li>
                     <li>滋賀県</li>
                     <li>京都府</li>
@@ -85,7 +86,7 @@
             </details>
 
             <details>
-                <summary class="tiiki-name">中国</summary>
+                <summary class="area-name">中国</summary>
                     <li>鳥取県</li>
                     <li>島根県</li>
                     <li>岡山県</li>
@@ -94,7 +95,7 @@
             </details>
 
             <details>
-                <summary class="tiiki-name">四国</summary>
+                <summary class="area-name">四国</summary>
                     <li>徳島県</li>
                     <li>香川県</li>
                     <li>愛媛県</li>
@@ -102,7 +103,7 @@
             </details>
 
             <details>
-                <summary class="tiiki-name">九州・沖縄</summary>
+                <summary class="area-name">九州・沖縄</summary>
                     <li>福岡県</li>
                     <li>佐賀県</li>
                     <li>長崎県</li>
@@ -135,5 +136,6 @@
         </div>
     </footer>
     <!-- フッター -->
+    <script src="js/kadai.js"></script>
 </body>
 </html>
