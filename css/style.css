@@ -94,12 +94,12 @@ button:hover, button:active {
     text-align: center;
 }
 
-.link {
+a {
     color: rgb(129, 196, 235);
     text-decoration-color: rgb(129, 196, 235);
 }
 
-.link:hover {
+a:hover {
     text-decoration-line: none;
 }
 

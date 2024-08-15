@@ -1,6 +1,13 @@
 // 地域名を入力して検索ボタンを押したら検索結果が表示される
 // alert("11111");
 
+// 都道府県名+対象URLのオブジェクトを宣言
+const cityUrls = {
+  "東京都": "tokyo.html",
+  "名古屋": "http://nagoya.com",
+  "大阪府": "http://oosaka.com"
+};
+
 // 検索関数
 searchWord = function(){
   // 変数を決める
@@ -26,7 +33,9 @@ searchWord = function(){
  
     // 検索結果をポップアップに表示
     for (let i = 0; i < searchResult.length; i ++) {
-      $('<li>').text(searchResult[i]).appendTo('.area-result');
+      $('<li>')
+        .append($('<a>').attr('href', cityUrls[searchResult[i]]).text(searchResult[i]))
+        .appendTo('.area-result');
     }
 
   }
