@@ -63,6 +63,7 @@ const cityUrls = {
 // 検索関数
 searchWord = function(){
   // 変数を決める
+  $(".area-result").empty();
   let searchResult, 
       searchText = $(this).val(), // 検索ボックスに入力された値
       targetText,
@@ -75,7 +76,7 @@ searchWord = function(){
   if (searchText != '') {
       $('.area-name-2').each(function() {
       targetText = $(this).text();
- 
+      console.log(targetText);
       // 検索対象となるリストに入力された文字列が存在するかどうかを判断
       if (targetText.indexOf(searchText) != -1) {
         // 存在する場合はそのリストのテキストを用意した配列に格納
@@ -95,3 +96,100 @@ searchWord = function(){
  
 // searchWordの実行
 $('#search').on('input', searchWord);
+
+
+
+// 変数の定義
+let sanimap;
+let marker =[];
+let infoWindow = [];
+let activeWindow;
+
+// スプレッドシートからデータを取得する関数
+const fetchSheetData = () => {
+  const sheetId = '1QJiuJregE-59t2OzHYWkKtiosoG33oPU5Xjf8Anwvhk';  // スプレッドシートのID
+  const apiKey = 'YOUR_API_KEY';  // Google Sheets APIキー
+  const range = '配布一覧!A2:C';  // データの範囲
+  
+  const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`;
+  
+  return $.get(url)  // jQueryでスプレッドシートのデータを取得
+    .then((response) => {
+      // スプレッドシートからのデータを整形
+      const rows = response.values;
+      return rows.map((row) => ({
+        latitude: parseFloat(row[0]),  // A列の緯度
+        longitude: parseFloat(row[1]), // B列の経度
+        content: row[2],  // C列の吹き出し内容
+      }));
+    })
+    .catch((error) => {
+      console.error('スプレッドシートからデータを取得できませんでした:', error);
+      return [];
+    });
+};
+
+// マップを初期化
+const initMap = () => {
+  let sanimap;
+  // マップを表示させるHTMLの箱
+  const $maparea = $("#sanimap");
+  console.log("map area:", $maparea[0]); // デバッグ用メッセージ
+
+　// マップの中心位置
+  const center = {
+    lat: 35.717754,
+    lng: 139.772598,
+  };
+
+  //マップ作成
+  sanimap = new google.maps.Map($maparea[0], {
+    center: center,
+    zoom: 17,
+  });
+
+  // スプレッドシートからマーカーのデータを取得し、地図に反映
+  fetchSheetData().then((markerData) => {
+    for (let i = 0; i < markerData.length; i++) {
+      const markerLatLng = new google.maps.LatLng({
+        lat: markerData[i].latitude,
+        lng: markerData[i].longitude
+      });
+
+      // マーカーの追加
+      marker[i] = new google.maps.Marker({
+        position: markerLatLng,
+        map: sanimap,
+        icon: {
+          url: '/img/hanadeza-illust8.png',
+          scaledSize: new google.maps.Size(50, 50),
+        }
+      });
+
+      // 吹き出しの追加
+      infoWindow[i] = new google.maps.InfoWindow({
+        content: markerData[i].content
+      });
+
+      // マーカークリック時に吹き出しを表示するイベントを設定
+      markerEvent(i);
+    }
+  });
+}
+// マーカークリック時に吹き出しを表示する
+function markerEvent(i) {
+  marker[i].addListener('click', function () {
+    // 既に開いている吹き出しを閉じる
+    if (activeWindow) {
+      activeWindow.close();
+    }
+    // 新しい吹き出しを開く
+    infoWindow[i].open(sanimap, marker[i]);
+    activeWindow = infoWindow[i]; // 開いている吹き出しを記憶
+  });
+}
+
+// ページが読み込まれてからinitMapを呼び出す
+$(document).ready(function () {
+  initMap();
+});

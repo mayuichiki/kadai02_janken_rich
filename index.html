@@ -122,7 +122,7 @@
             <div class="map-header">
                 <h3 class="map-title">地図から探す</h3>
             </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12973.385824657085!2d139.7057777!3d35.6191846!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188a7c6aa11bd3%3A0xcaf204fc9cd51b61!2z5ZOB5bed5Yy6IOeUt-Wls-WFseWQjOWPgueUu-OCu-ODs-OCv-ODvA!5e0!3m2!1sja!2sjp!4v1723451209600!5m2!1sja!2sjp" width="1200" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div id="sanimap"></div>
         </section>
         <!-- 地図から探す -->
 
@@ -136,6 +136,8 @@
         </div>
     </footer>
     <!-- フッター -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
     <script src="js/app.js"></script>
 </body>
 </html>
